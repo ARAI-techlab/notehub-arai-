@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <button @click="login">login</button>
+    <button @click="logout">logout</button>
     <p v-if="userData!=null">ログイン中</p>
     <p v-else>ログアウト中</p>
     <p>{{userData}}</P>
@@ -27,6 +28,7 @@ export default {
       console.log(user);
       if (user) {
         this.userData = user;
+        location.href = "/";
       } else {
         this.userData = null;
       };
