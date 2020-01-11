@@ -1,8 +1,11 @@
 <template>
   <div class="container">
+
+    <!--  ログインボタン。新規会員登録 -->
+    <button @click="login">login</button> 
     
     <!--  ログインボタン。今のところはgoogleのみのログイン -->
-    <button @click="login">login</button> 
+    <button @click="googlelogin">login</button> 
      
     <!--  ログアウトボタン。本来は、このページにログアウトボタンは必要ないが、開発中はあると便利なのでつけておく -->
     <button @click="logout">logout</button>
@@ -31,7 +34,7 @@ export default {
     },
   methods: {
     //↓ログインボタンが押された時の処理。firebaseの機能でグーグル認証に連携する。
-    login: function(){
+    googlelogin: function(){
         firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider());
     },
 
